@@ -13,7 +13,9 @@ RUN apk add --update git \
     && apk upgrade \
     && apk add --no-cache ca-certificates
 
-VOLUME /src
+RUN git clone https://github.com/opslogic/timshorts.git /src
+
+VOLUME ["/src"]
 VOLUME /output
 
 WORKDIR /src
