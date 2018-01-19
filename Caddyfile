@@ -1,0 +1,12 @@
+107.170.234.196:2015
+# disable HTTPS to run the server on localhost
+tls off
+root /srv/www/timshorts
+git {
+    repo git@github.com:opslogic/timshorts.git
+    then hugo --theme hugrid --destination /srv/www/timshorts --baseURL 107.170.234.196/
+    key /root/.ssh/id_rsa
+    branch master
+    interval 300
+}
+
